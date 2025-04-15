@@ -12,4 +12,10 @@ class Transaction extends Model
         "date",
         "statuts",
     ];
+
+    public function contrat()
+    {
+        return $this->belongsTo(Contrat::class, );
+
+    }
 }

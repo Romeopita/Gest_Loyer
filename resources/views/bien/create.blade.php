@@ -21,35 +21,22 @@
                 <div class="col">
                   <div class="form-group">
                     <label for="ville">Ville</label>
-                    <select class="form-select" id="ville" name="ville" required>
-                        <option value="Berline">Kara</option>
-                        <option value="SUV">Bafilo</option>
-                        <option value="Hatchback">Kétao</option>
-                        <option value="Break">Niamtougou</option>
-                        <option value="Cabriolet">Pya</option>
-                    </select>
+                    <input type="text" class="form-control" id="ville" name="ville" placeholder="Entrez la ville" required>
                   </div>
                   <div class="form-group">
                     <label for="quartier">Quartier</label>
                     <input type="text" class="form-control" id="quartier" name="quartier" placeholder="Entrez le quartier">
                   </div>
                   <div class="form-group">
-                    <label for="type">Type</label>
-                    <select class="form-select" id="type" name="type" value="" required>
-                        <option value=""></option>
-                        <option value="Chambre">Chambre</option>
-                        <option value="Chambre-Salon">Chambre-Salon</option>
-                        <option value="Villa/appartement">Villa/appartement</option>
-                        <option value="Boutique<">Boutique</option>
-                        <option value="Terrain">Terrain</option>
-                    </select>
+                    <label for="type">Description</label>
+                    <input type="text" class="form-control" id="description" name="description" placeholder="Entrez la description" required>
                   </div>
                   <div class="form-group">
-                    <label for="prix">Prix</label>
+                    <label for="prix">Prix Mensuel</label>
                     <input type="number" class="form-control" id="prix" placeholder="Entrez le prix"/>
                   </div>
                   <div class="form-group">
-                    <label for="carte">statuts</label>
+                    <label for="statuts">statuts</label>
                     <select class="form-select" id="carosserie" name="carosserie" required>
                         <option value="Berline">Libre</option>
                         <option value="SUV">Occupé</option>

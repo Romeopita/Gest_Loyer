@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('biens', function (Blueprint $table) {
             $table->id();
-            $table->strind("ville");
+            $table->string("ville");
             $table->string("quartier");
-            $table->string("type");
-            $table->number("prix");
+            $table->string("description");
+            $table->number("prix_mensuel");
             $table->string("statuts");
             $table->timestamps();
         });

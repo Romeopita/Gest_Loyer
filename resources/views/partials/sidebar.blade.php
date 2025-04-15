@@ -51,6 +51,13 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('contrats.index') }}">
+              <i class="fas fa-layer-group"></i>
+              <p>Contrats</p>
+              {{-- <span class="caret"></span> --}}
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('transactions.index') }}">
               <i class="fas fa-layer-group"></i>
               <p>Transactions</p>
