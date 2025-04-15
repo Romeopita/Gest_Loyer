@@ -12,6 +12,7 @@ class BienController extends Controller
      */
     public function index()
     {
+        $biens = Bien::all();
         return view("bien.index");
     }
 
@@ -28,8 +29,9 @@ class BienController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         Bien::create($request->except("_token"));
-        return to_route("biens.index");
+        return to_route("biens.index")->with("success", "Bien ajouté avec succès");
     }
 
     /**

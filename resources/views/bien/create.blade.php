@@ -34,8 +34,8 @@
                       <input type="text" class="form-control" id="description" name="description" placeholder="Entrez la description" required>
                     </div>
                     <div class="form-group">
-                      <label for="prix">Prix Mensuel</label>
-                      <input type="number" class="form-control" id="prix" placeholder="Entrez le prix"/>
+                      <label for="prix_mensuel">Prix Mensuel</label>
+                      <input type="number" class="form-control" id="prix" name="prix_mensuel" placeholder="Entrez le prix"/>
                     </div>
                     <div class="form-group">
                       <label for="statuts">statuts</label>
