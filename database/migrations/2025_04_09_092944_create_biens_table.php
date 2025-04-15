@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("ville");
             $table->string("quartier");
             $table->string("description");
-            $table->number("prix_mensuel");
+            $table->integer("prix_mensuel");
             $table->string("statuts");
             $table->timestamps();
         });

@@ -19,7 +19,7 @@
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                    <form action="">
+                    <form action="{{ route('contrats.store') }}">
                         <div class="form-group">
                             <label for="client">Client</label>
                             <select name="client" id="client" class="form-control">

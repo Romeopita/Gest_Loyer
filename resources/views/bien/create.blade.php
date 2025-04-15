@@ -19,29 +19,35 @@
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                  <div class="form-group">
-                    <label for="ville">Ville</label>
-                    <input type="text" class="form-control" id="ville" name="ville" placeholder="Entrez la ville" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="quartier">Quartier</label>
-                    <input type="text" class="form-control" id="quartier" name="quartier" placeholder="Entrez le quartier">
-                  </div>
-                  <div class="form-group">
-                    <label for="type">Description</label>
-                    <input type="text" class="form-control" id="description" name="description" placeholder="Entrez la description" required>
-                  </div>
-                  <div class="form-group">
-                    <label for="prix">Prix Mensuel</label>
-                    <input type="number" class="form-control" id="prix" placeholder="Entrez le prix"/>
-                  </div>
-                  <div class="form-group">
-                    <label for="statuts">statuts</label>
-                    <select class="form-select" id="carosserie" name="carosserie" required>
-                        <option value="Berline">Libre</option>
-                        <option value="SUV">Occupé</option>
-                    </select>
-                  </div>
+                  <form action="{{ route('biens.store') }}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                      <label for="ville">Ville</label>
+                      <input type="text" class="form-control" id="ville" name="ville" placeholder="Entrez la ville" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="quartier">Quartier</label>
+                      <input type="text" class="form-control" id="quartier" name="quartier" placeholder="Entrez le quartier">
+                    </div>
+                    <div class="form-group">
+                      <label for="type">Description</label>
+                      <input type="text" class="form-control" id="description" name="description" placeholder="Entrez la description" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="prix">Prix Mensuel</label>
+                      <input type="number" class="form-control" id="prix" placeholder="Entrez le prix"/>
+                    </div>
+                    <div class="form-group">
+                      <label for="statuts">statuts</label>
+                      <select class="form-select" id="carosserie" name="statuts" required>
+                          <option value="Libre">Libre</option>
+                          <option value="Occupé">Occupé</option>
+                      </select>
+                    </div>
+                    <div class="card-action">
+                      <button class="btn btn-success">Submit</button>
+                    </div>
+                  </form>
                 </div>
             </div>
         </div>

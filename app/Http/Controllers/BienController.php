@@ -28,7 +28,8 @@ class BienController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Bien::create($request->except("_token"));
+        return to_route("biens.index");
     }
 
     /**
