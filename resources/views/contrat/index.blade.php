@@ -18,24 +18,26 @@
                         <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Noms</th>
-                            <th scope="col">Prénoms</th>
-                            <th scope="col">Contacts</th>
+                            <th scope="col">Biens</th>
+                            <th scope="col">Clients</th>
+                            <th scope="col">Date de début</th>
                             <th scope="col" class="text-center">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>TOURE</td>
-                            <td>Abdoul</td>
-                            <td>90909090</td>
-                            <td>
-                                <a href="" class="btn btn-primary">Modifier</a>
-                                <a href="" class="btn btn-danger">Supprimer</a>
-                            </td>
-                        </tr>
-                        <tr>
+                            @foreach ($contrats as $contrat)
+                            <tr>
+                                <td> {{ $contrat->id }} </td>
+                                <td> {{ $contrat->bien->description }} </td>
+                                <td> {{ $contrat->client->nom }} {{ $contrat->client->prenom }} </td>
+                                <td> {{ $contrat->date_debut }} </td>
+                                <td>
+                                    <a href="" class="btn btn-primary">Modifier</a>
+                                    <a href="" class="btn btn-danger">Supprimer</a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        {{-- <tr>
                             <td>2</td>
                             <td>TOURE</td>
                             <td>Abdoul</td>
@@ -64,7 +66,7 @@
                                 <a href="" class="btn btn-primary">Modifier</a>
                                 <a href="" class="btn btn-danger">Supprimer</a>
                             </td>
-                        </tr>
+                        </tr> --}}
                         </tbody>
                     </table>
                 </div>

@@ -12,7 +12,8 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return view("client.index");
+        $clients = Client::all();
+        return view("client.index", compact("clients"));
     }
 
     /**
@@ -28,7 +29,8 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Client::create($request->except("_token"));
+        return to_route('clients.index')->with("success", "Client ajouté avec succès");
     }
 
     /**

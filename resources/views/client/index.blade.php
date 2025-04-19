@@ -25,17 +25,19 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>TOURE</td>
-                            <td>Abdoul</td>
-                            <td>90909090</td>
-                            <td>
-                                <a href="" class="btn btn-primary">Modifier</a>
-                                <a href="" class="btn btn-danger">Supprimer</a>
-                            </td>
-                        </tr>
-                        <tr>
+                            @foreach ($clients as $client)
+                            <tr>
+                                <td> {{ $client->id }} </td>
+                                <td> {{ $client->nom }} </td>
+                                <td> {{ $client->prenom }} </td>
+                                <td> {{ $client->telephone }} </td>
+                                <td>
+                                    <a href="" class="btn btn-primary">Modifier</a>
+                                    <a href="" class="btn btn-danger">Supprimer</a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        {{-- <tr>
                             <td>2</td>
                             <td>TOURE</td>
                             <td>Abdoul</td>
@@ -64,7 +66,7 @@
                                 <a href="" class="btn btn-primary">Modifier</a>
                                 <a href="" class="btn btn-danger">Supprimer</a>
                             </td>
-                        </tr>
+                        </tr> --}}
                         </tbody>
                     </table>
                 </div>

@@ -19,19 +19,24 @@
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                    <form action="{{ route('contrats.store') }}">
+                    <form action="{{ route('contrats.store') }}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                          <label for="prenom">Bien</label>
+                          <select id="bien" class="form-control" name="bien_id">
+                              <option value="">Sélectionner un bien</option>
+                              @foreach ($biens as $bien)
+                                <option value="{{ $bien->id }}"> {{ $bien->description }} {{ $bien->quartier }} {{ $bien->prix_mensuel }} {{ $bien->statuts }} </option>
+                              @endforeach
+                          </select>
+                        </div>
                         <div class="form-group">
                             <label for="client">Client</label>
-                            <select name="client" id="client" class="form-control">
-                                <option value=""></option>
-                                <option value="1">Client 1</option>
-                            </select>
-                          </div>
-                          <div class="form-group">
-                            <label for="prenom">Bien</label>
-                            <select name="bien" id="bien" class="form-control">
-                                <option value=""></option>
-                                <option value="1">Bien 1</option>
+                            <select id="client" class="form-control" name="client_id">
+                                <option value="">Sélectionner un client</option>
+                                @foreach ($clients as $client)
+                                <option value="{{ $client->id }}"> {{ $client->nom }} {{ $client->prenom }} </option>
+                                @endforeach
                             </select>
                           </div>
                           <div class="form-group">
@@ -40,7 +45,7 @@
                           </div>
                           <div class="form-group">
                             <label for="statut">statut</label>
-                            <input type="text" class="form-control" id="carte" name="statut" placeholder=""/>
+                            <input type="text" class="form-control" id="statut" name="statut" placeholder="statut"/>
                           </div>
                           <div class="card-action">
                               <button class="btn btn-success">Submit</button>

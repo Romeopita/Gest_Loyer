@@ -13,7 +13,7 @@ class BienController extends Controller
     public function index()
     {
         $biens = Bien::all();
-        return view("bien.index");
+        return view("bien.index", compact("biens"));
     }
 
     /**
@@ -47,7 +47,7 @@ class BienController extends Controller
      */
     public function edit(Bien $bien)
     {
-        //
+        return view("bien.edit", compact("bien"));
     }
 
     /**
@@ -55,7 +55,9 @@ class BienController extends Controller
      */
     public function update(Request $request, Bien $bien)
     {
-        //
+        // dd($request->all());
+        $bien->update($request->except("_token", "_method"));
+        return to_route("biens.index");
     }
 
     /**
@@ -63,6 +65,7 @@ class BienController extends Controller
      */
     public function destroy(Bien $bien)
     {
-        //
+        $bien->delete();
+        return to_route("biens.index");
     }
 }

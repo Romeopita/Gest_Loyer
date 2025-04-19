@@ -6,20 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contrat extends Model
 {
-    private $fillables = [
-        "date_debut",
-        "statut",
-    ];
+    protected $fillable = ["bien_id", "client_id", "date_debut", "statut"];
 
-    public function client()
-    {
-        return $this->belongsTo(Client::class);
-
-    }
-
+    
     public function bien()
     {
-        return $this->belongsTo(Bien::class);
+        return $this->belongsTo(Bien::class, "bien_id");
+        
+    }
+    public function client()
+    {
+        return $this->belongsTo(Client::class, "client_id");
 
     }
 }

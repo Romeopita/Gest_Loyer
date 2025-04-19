@@ -21,8 +21,8 @@
     </div>
     <div class="sidebar-wrapper scrollbar scrollbar-inner">
       <div class="sidebar-content">
-        <ul class="nav nav-secondary">
-          <li class="nav-item active">
+        <ul class="nav nav-secondary" id="maListe">
+          <li class="nav-item">
             <a
               href="{{ '/'}}"
             >
@@ -68,3 +68,15 @@
       </div>
     </div>
   </div>
+  <script>
+    document.getElementById('maListe').addEventListener('click', function(e) {
+      if (e.target.tagName === 'li') {
+        // Retirer 'active' de tous les li
+        const items = this.querySelectorAll('li');
+        items.forEach(item => item.classList.remove('active'));
+        
+        // Ajouter 'active' au li cliqué
+        e.target.classList.add('active');
+      }
+    });
+  </script>

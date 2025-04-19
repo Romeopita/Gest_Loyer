@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bien;
+use App\Models\Client;
 use App\Models\Contrat;
 use Illuminate\Http\Request;
 
@@ -12,7 +14,8 @@ class ContratController extends Controller
      */
     public function index()
     {
-        return view("contrat.index");
+        $contrats = Contrat::with(["client", "bien"])->get();
+        return view("contrat.index", compact("contrats"));
     }
 
     /**
@@ -20,7 +23,9 @@ class ContratController extends Controller
      */
     public function create()
     {
-        return view("contrat.create");
+        $clients = Client::all();
+        $biens = Bien::all();
+        return view("contrat.create", compact("clients","biens"));
     }
 
     /**
@@ -28,7 +33,9 @@ class ContratController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        Contrat::create($request->except("_token"));
+        return to_route("contrats.index");
     }
 
     /**

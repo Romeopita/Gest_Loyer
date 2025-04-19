@@ -32,18 +32,18 @@
                         </div>
                         <div class="form-group">
                             <label for="date_paiement">Date de paiement</label>
-                            <input type="date" class="form-control" name="date_paiement" id="carte" placeholder="" value=""/>
+                            <input type="date" class="form-control" name="date_paiement" id="date_paiement" placeholder="" value=""/>
                         </div>
                         <div class="form-group">
-                            <label for="carte">Mois couverts</label>
+                            <label for="mois_couvert">Mois couverts</label>
                             <input type="text" class="form-control" name="mois_couvert" id="mois_couvert" placeholder="Janvier-Décembre" value=""/>
                         </div>
                         <div class="form-group">
                             <label for="mode_paiement">Mode de Paiement</label>
                             <select name="mode_paiement" id="mode_paiement" class="form-control">
                                 <option value="Espèce">Espèce</option>
-                                <option value="Espèce">Mixx by Yas</option>
-                                <option value="Espèce">Flooz</option>
+                                <option value="Mixx by Yas">Mixx by Yas</option>
+                                <option value="Flooz">Flooz</option>
                             </select>
                         </div>
                         <div class="card-action">

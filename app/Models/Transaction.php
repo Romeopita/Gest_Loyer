@@ -6,12 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transaction extends Model
 {
-    protected $fillable = [
-        "type",
-        "montant",
-        "date",
-        "statuts",
-    ];
+    protected $fillable = ["", "montant", "date", "statuts"];
 
     public function contrat()
     {
